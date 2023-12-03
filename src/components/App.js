@@ -5,17 +5,14 @@ import Form from './Form';
 import PackingList from './PackingList';
 import Stats from './Stats';
 function App() {
-  useEffect(() => {
-    function setAppHeight() {
-      document.body.style.height = window.innerHeight + 'px';
-    }
-
+  function setAppHeight() {
+    document.body.style.height = window.innerHeight + 'px';
+  }
+   useEffect(() => {
+   setAppHeight()
     window.addEventListener('resize', setAppHeight);
-    window.addEventListener('load', setAppHeight);
-
     return () => {
       window.removeEventListener('resize', setAppHeight);
-      window.removeEventListener('load', setAppHeight);
     };
   }, []);
 
