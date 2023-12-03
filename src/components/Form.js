@@ -26,18 +26,20 @@ export default function Form({updateLists}){
     return (
       <form className='add-form' onSubmit={handleSubmit}>
         <h3>What do you need for your 😍 trip?</h3>
-        <select value={selectValue} onChange={selectValueHandler}>
-          {
-            Array.from({length:20},(_,i)=>i+1).map((num)=>{
-              return (
-                <option value={num} key={num}>{num}</option>
-              )
-            })
-          }
-           
-        </select>
-        <input type='text' value={description} onChange={inputTypeHandler} placeholder='Item...'/>
-        <button>Add</button>
+        <div className="add-form-second">
+          <select value={selectValue} onChange={selectValueHandler}>
+            {
+              Array.from({length:20},(_,i)=>i+1).map((num)=>{
+                return (
+                  <option value={num} key={num}>{num}</option>
+                )
+              })
+            }
+            
+          </select>
+          <input type='text' value={description} onChange={inputTypeHandler} placeholder='Item...'/>
+          <button>Add</button>
+        </div>
       </form>
     )
   }
